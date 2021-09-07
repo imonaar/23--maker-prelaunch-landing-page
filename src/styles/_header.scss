@@ -1,0 +1,149 @@
+.header{
+  inline-size: 100%;
+
+  &__wrapper{
+    inline-size: 100%;
+    display: grid;
+    gap: 4.09375rem;
+
+    @include tablet{
+      gap: 4.8125rem;
+    }
+
+    @include tablet{
+      gap: 7.125rem;
+    }
+  }
+
+  nav{
+    inline-size: 100%;
+    display: flex;
+    align-items: center;
+    padding-block-start: 2.5rem;
+
+    img{
+      block-size: 2.1875rem;
+      inline-size: 7.5rem;
+    }
+
+    @include mobile{
+      justify-content: center;
+    }
+
+    @include tablet{
+      padding-left: 2.5rem;
+      padding-block-start: 3rem;
+    }
+
+    @include desktop{
+      padding-left: 10.3125rem;
+      padding-block-start: 5rem;
+    }
+  }
+
+  &__hero{
+    display: grid;
+
+    @include tablet{
+      grid-template-columns: 1fr 28.5625rem 1fr;
+      block-size: 22.25rem;
+      align-items: center;
+    }
+
+    @include desktop{
+      block-size: 28.6875rem;
+      grid-template-columns: 1fr 45.625rem 1fr;
+    }
+
+    &__content{
+      text-align: center;
+      margin-top: 2.96875rem;
+      padding-inline: 1.5rem;
+      display: grid;
+      gap: 1.5rem;
+
+      @include tablet{
+        margin-top: 0;
+        block-size: 100%;
+        place-content: center;
+        padding-inline: 0;
+      }
+
+      h1{
+        font-size: clamp(2rem, 1.6479rem + 1.5023vw, 3rem);
+        line-height: clamp(2.5rem, 2.1479rem + 1.5023vw, 3.5rem);
+        max-inline-size: 18ch;
+        inline-size: 100%;
+        justify-self: center;
+
+        span{
+          color: var(--bg-1);
+        }
+
+        @include mobile{
+          padding-inline: 2.5rem ;
+        }
+      }
+
+      p{
+        font-size: 15px;
+        line-height: 25px;
+        justify-self: center;
+        max-inline-size: 55ch;
+      }
+
+      @include tablet{
+        background-image: url('../../assets/bg-hero-squiggle.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+
+    &__icon{
+      display: flex;
+      justify-content: center;
+      margin-block-start: .5rem;
+
+      @include desktop{
+        margin-top: 2.5rem;
+      }
+    }
+  }
+
+  &__hero__mobile{
+    inline-size: 100%;
+    block-size: 14.5625rem;
+    background-image: url('../../assets/illustration-hero-mobile.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include tablet{
+      display: none;
+    }
+  }
+
+  &__hero__desktop{
+    inline-size: 100%;
+    block-size: 100%;
+    @include mobile{
+      display: none;
+    }
+
+    &-left{
+      background-image: url('../../assets/illustration-hero-left.svg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: right center;
+    }
+
+    &-right{
+      background-image: url('../../assets/illustration-hero-right.svg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: left center;
+    }
+  }
+
+  
+}

@@ -1,0 +1,25 @@
+.main{
+  inline-size: 100%;
+
+  &__wrapper{
+    inline-size: 100%;
+    padding-inline: 1.5rem;
+  }
+
+  &__cards{
+    
+  }
+
+  &__cards__card{
+    inline-size: 100%;
+    display: grid;
+    justify-items: center;
+    gap: 1.5rem;
+
+    &__content{
+      display: grid;
+      justify-items: center;
+      text-align: center;
+    }
+  }
+}
