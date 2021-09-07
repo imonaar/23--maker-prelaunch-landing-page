@@ -110,12 +110,12 @@
 
   &__pricing{
     display: grid;
-    gap: 3.5rem;
+    gap: 5.375rem;
     justify-items: center;
     inline-size: 100%;
 
     @include desktop{
-      gap: 4.5rem;
+      gap: 6.5rem;
     }
 
     &__content{
