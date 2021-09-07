@@ -4,22 +4,239 @@
   &__wrapper{
     inline-size: 100%;
     padding-inline: 1.5rem;
+    display: grid;
+    justify-items: center;
+    gap: 9rem;
+
+    @include desktop{
+      gap: 2rem;
+    }
   }
 
   &__cards{
-    
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    inline-size: 100%;
+
+    @include tablet{
+      max-inline-size: 35.875rem;
+    }
+
+    @include desktop{
+      max-inline-size: 69.375rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      block-size: 383px;
+    }
   }
 
   &__cards__card{
     inline-size: 100%;
     display: grid;
-    justify-items: center;
-    gap: 1.5rem;
+
+    @include mobile{
+      justify-items: center;
+      gap: 2rem;
+    }
+
+    &__image{
+      inline-size: 7.5rem;
+      block-size: 7.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--bg-2);
+      border-radius: 45px;
+
+      @include desktop{
+        inline-size: 10rem;
+        block-size: 10.25rem;
+      }
+    }
 
     &__content{
       display: grid;
       justify-items: center;
       text-align: center;
+
+      @include tablet{
+        text-align: left;
+        justify-items: flex-start;
+        gap: .6875rem;
+      }
+    
+
+      h2{
+        font-size: 1.125rem;
+        line-height: 24.59px;
+      }
+
+      p{
+        font-size: 15px;
+        line-height: 25px;
+      }
+    }
+
+    @include tablet{
+      inline-size: 100%;
+      max-inline-size: 32.1875rem;
+      grid-template-columns: 120px 1fr;
+      gap: 3.4375rem;
+      align-items: center;
+
+      &:nth-child(odd){
+        align-self: flex-end;
+      }
+    }
+
+    @include desktop{
+      all: unset;
+      display: grid;
+      gap: 3rem;
+      block-size: 20.9375rem;
+      
+      &:nth-child(odd){
+        align-self: flex-start;
+      }
+
+      &:nth-child(even){
+        align-self: flex-end;
+      }
+    }
+  }
+
+
+  &__pricing{
+    display: grid;
+    gap: 3.5rem;
+    justify-items: center;
+    inline-size: 100%;
+
+    @include desktop{
+      gap: 4.5rem;
+    }
+
+    &__content{
+      display: grid;
+      justify-items: center;
+      text-align: center;
+      gap: 1.6875rem;
+
+      h3{
+        font-size: clamp(1.5rem, 1.3239rem + 0.7512vw, 2rem);
+        line-height: clamp(2rem, 1.7535rem + 1.0516vw, 2.7rem);
+      }
+
+      p{
+        max-inline-size: 65ch;
+        font-size: .9375rem;
+        line-height: 25px;  
+      }
+    }
+
+    &__cards{
+      inline-size: 100%;
+      display: grid;
+      gap: 4rem;
+      justify-items: center;
+
+      @include desktop{
+        max-inline-size: 57.5rem;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.875rem;
+      }
+    }
+
+    &__cards__card{
+      padding-inline: 1.875rem;
+      inline-size: 100%;
+      border-radius: 5px;
+      padding-block-end: 2rem;
+
+      @include tablet{
+        max-inline-size: 27.8125rem;
+      }
+
+      @include tablet{
+        &:last-of-type{
+          transform: scaleY(1.05);
+          
+        }
+      }
+
+      .image{
+        transform: translateY(-50%);
+      }
+
+      div{
+        display: grid;
+        gap: 1.1875rem;
+        
+        h4{
+          font-size: 1.125rem;
+          line-height: 25px;
+        }
+
+        p{
+          font-size: .9375rem;
+          line-height: 25px;  
+        }
+
+        span{
+          font-size: 2.5rem;
+          line-height: 54.64px;
+          font-weight: 800;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+
+          p{
+            color: var(--color);
+            font-weight: 200;
+          }
+        }
+
+        ul{
+          display: grid;
+          gap: .75rem;
+          li{
+            padding-left: 1.625rem;
+            position: relative;
+            font-size: .9375rem;
+            line-height: 25px;
+
+            &::before{
+              content: '\2714';
+              position: absolute;
+              left: 0;
+              top: 50%;
+              transform: translateY(-50%);
+              color: var(--main-bg);
+            }
+          }
+        }
+
+        &:last-of-type{
+          margin-top: 3.1875rem;
+        }
+      }
+
+      &:first-of-type{
+        background-color: var(--bg-2);
+        
+        span{
+          color: white;
+        }
+
+        li{
+          color: white;
+        }
+      }
+
+      &:last-of-type{
+        background-color: var(--bg-1);
+      }
     }
   }
 }
