@@ -52,6 +52,9 @@
         border: 1px solid transparent;
         inline-size: 100%;
 
+        &:invalid{
+          border-color: var(--danger);
+        }
       }
 
       .error {
