@@ -137,8 +137,11 @@
   <footer class="footer">
     <div class="footer__wrapper">
       <h5>Get notified when we launch</h5>
-      <form name="form">
-        <input type="email" name="email" id="email" placeholder="Email address" required>
+      <form name="form" novalidate>
+        <label for="mail">
+          <input type="email" name="email" id="email" placeholder="Email address" required minlength="8">
+          <span class="error" aria-live="polite"></span>
+        </label>
         <button type="submit"> Get notified</button>
       </form>
     </div>
